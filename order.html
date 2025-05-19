@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Requests - CraftMaker</title>
+    <link rel="stylesheet" href="order.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="top-bar">
+        <div class="brand">CraftMaker</div>
+        <div class="profile-icons">
+          <span>🔔</span>
+          <span>👤</span>
+        </div>
+      </header>
+      <main>
+        <a
+          href="../Home page/Home.html"
+          class="back-button"
+          aria-label="Go back to previous page"
+        >
+          <i class="fas fa-arrow-left"></i> Back
+        </a>
+        <div class="header-row">
+          <h2>Custom Requests</h2>
+          <div class="controls">
+            <input type="text" placeholder="🔍 Search requests..." />
+            <select>
+              <option>All Statuses</option>
+              <option>Pending</option>
+              <option>Accepted</option>
+              <option>Completed</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="request-list">
+          <!-- Request Item -->
+          <div class="request-item">
+            <div
+              class="user-avatar"
+              style="background-image: url('https://via.placeholder.com/40')"
+            ></div>
+            <div class="request-info">
+              <div class="request-title">Custom Wooden Jewelry Box</div>
+              <div class="request-user">Sarah Anderson</div>
+              <div class="request-desc">
+                Handcrafted jewelry box with intricate carved details and
+                multiple compartments...
+              </div>
+            </div>
+            <div class="request-status">
+              <span class="badge pending">Pending</span>
+              <div class="date">Jan 15, 2025</div>
+            </div>
+          </div>
+
+          <div class="request-item">
+            <div
+              class="user-avatar"
+              style="background-image: url('https://via.placeholder.com/40')"
+            ></div>
+            <div class="request-info">
+              <div class="request-title">Custom Ceramic Vase Set</div>
+              <div class="request-user">Michael Brown</div>
+              <div class="request-desc">
+                Set of three matching ceramic vases with modern geometric
+                patterns...
+              </div>
+            </div>
+            <div class="request-status">
+              <span class="badge accepted">Accepted</span>
+              <div class="date">Jan 14, 2025</div>
+            </div>
+          </div>
+
+          <div class="request-item">
+            <div
+              class="user-avatar"
+              style="background-image: url('https://via.placeholder.com/40')"
+            ></div>
+            <div class="request-info">
+              <div class="request-title">Personalized Wall Art</div>
+              <div class="request-user">Emily Wilson</div>
+              <div class="request-desc">
+                Large-scale abstract painting in blue and gold tones...
+              </div>
+            </div>
+            <div class="request-status">
+              <span class="badge completed">Completed</span>
+              <div class="date">Jan 12, 2025</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

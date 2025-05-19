@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Innocraft</title>
+    <link rel="stylesheet" href="checkout.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+      <p>
+        SUMMER SALE FOR ALL SWIM SUITS AND FREE EXPRESS DELIVERY - OFF 50%!
+        <span class="shop-now">ShopNow</span>
+      </p>
+      <div class="language-selector">
+        <span>English</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header">
+      <div class="container header-container">
+        <!-- Logo -->
+        <div class="logo">
+          <h1><a href="../index.html">Innocraft</a></h1>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav class="main-nav">
+          <ul>
+            <li><a href="../Home page/Home.html">Home</a></li>
+            <li><a href="../Contect/contact.html">Contact</a></li>
+            <li><a href="../About/about.html">About</a></li>
+            <li><a href="../community/community.html">community</a></li>
+            <li><a href="../SginUpPage/sign_up.html">Sign Up</a></li>
+          </ul>
+        </nav>
+
+        <!-- Search and User Actions -->
+        <div class="user-actions">
+          <div class="search-bar">
+            <input type="text" placeholder="What are you looking for?" />
+            <i class="fas fa-search search-icon"></i>
+          </div>
+          <div class="action-icons">
+            <a href="wishlist.html" class="icon-wrapper">
+              <i class="far fa-heart"></i>
+              <span class="badge">4</span>
+            </a>
+            <a href="#" id="cart-icon" class="icon-wrapper">
+              <i class="fas fa-shopping-cart"></i>
+              <span class="badge">2</span>
+            </a>
+            <a href="../profile/profile.html"
+              ><i class="fa-regular fa-user"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content - Checkout -->
+    <main class="container checkout-container">
+      <!-- Billing Details Form -->
+      <div class="billing-details">
+        <h1>Billing Details</h1>
+        <form id="billing-form">
+          <div class="form-group">
+            <label for="first-name"
+              >First Name<span class="required">*</span></label
+            >
+            <input type="text" id="first-name" name="first-name" required />
+          </div>
+          <div class="form-group">
+            <label for="company-name">Company Name</label>
+            <input type="text" id="company-name" name="company-name" />
+          </div>
+          <div class="form-group">
+            <label for="street-address"
+              >Street Address<span class="required">*</span></label
+            >
+            <input
+              type="text"
+              id="street-address"
+              name="street-address"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="apartment">Apartment, floor, etc. (optional)</label>
+            <input type="text" id="apartment" name="apartment" />
+          </div>
+          <div class="form-group">
+            <label for="town-city"
+              >Town/City<span class="required">*</span></label
+            >
+            <input type="text" id="town-city" name="town-city" required />
+          </div>
+          <div class="form-group">
+            <label for="phone-number"
+              >Phone Number<span class="required">*</span></label
+            >
+            <input type="tel" id="phone-number" name="phone-number" required />
+          </div>
+          <div class="form-group">
+            <label for="email-address"
+              >Email Address<span class="required">*</span></label
+            >
+            <input
+              type="email"
+              id="email-address"
+              name="email-address"
+              required
+            />
+          </div>
+          <div class="form-group checkbox-group">
+            <input type="checkbox" id="save-info" name="save-info" />
+            <label for="save-info"
+              >Save this information for faster check-out next time</label
+            >
+          </div>
+        </form>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="order-summary">
+        <div class="order-items">
+          <div class="order-item">
+            <div class="item-name">handmade</div>
+            <div class="item-price">$650</div>
+          </div>
+          <div class="order-item">
+            <div class="item-name">handmade</div>
+            <div class="item-price">$1100</div>
+          </div>
+        </div>
+        <div class="order-totals">
+          <div class="total-row">
+            <div class="total-label">Subtotal:</div>
+            <div class="total-value">$1750</div>
+          </div>
+          <div class="total-row">
+            <div class="total-label">Shipping:</div>
+            <div class="total-value">Free</div>
+          </div>
+          <div class="total-row grand-total">
+            <div class="total-label">Total:</div>
+            <div class="total-value">$1750</div>
+          </div>
+        </div>
+        <div class="payment-methods">
+          <div class="payment-method">
+            <input
+              type="radio"
+              id="bank-payment"
+              name="payment-method"
+              value="bank"
+            />
+            <label for="bank-payment">Bank</label>
+            <div class="payment-icons">
+              <img src="../img/download (1).jfif" alt="Klarna" />
+              <img src="../img/download.jfif" alt="Visa" />
+              <img src="../img/download (2).jfif" alt="Mastercard" />
+              <img src="../img/download (3).jfif" alt="UnionPay" />
+            </div>
+          </div>
+          <div class="payment-method">
+            <input
+              type="radio"
+              id="cash-delivery"
+              name="payment-method"
+              value="cash"
+              checked
+            />
+            <label for="cash-delivery">Cash on delivery</label>
+          </div>
+        </div>
+        <button type="submit" class="place-order-btn" form="billing-form">
+          Place Order
+        </button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container footer-container">
+        <div class="footer-column">
+          <h3 class="footer-logo">Innocraft</h3>
+          <div class="subscribe">
+            <h4>Subscribe</h4>
+            <p>Get 10% off your first order</p>
+            <div class="email-signup">
+              <input type="email" placeholder="Enter your email" />
+              <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+            <li>Giza</li>
+            <li>innocraft@gmail.com</li>
+            <li>01122771347</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Account</h4>
+          <ul>
+            <li><a href="account.html">My Account</a></li>
+            <li><a href="sign-up.html">Login / Register</a></li>
+            <li><a href="#" id="footer-cart">Cart</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="#">Shop</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Link</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms Of Use</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Download App</h4>
+          <p class="app-discount">Save $3 with App New User Only</p>
+          <div class="app-download">
+            <div class="qr-code"></div>
+            <div class="app-links">
+              <a href="#" class="app-store-link">
+                <img src="../images/google-play.png" alt="Google Play" />
+              </a>
+              <a href="#" class="app-store-link">
+                <img src="../images/app-store.png" alt="App Store" />
+              </a>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>© 2023 Innocraft. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="checkout.js"></script>
+  </body>
+</html>

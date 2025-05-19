@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Request</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+     -->
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+        function Alert(event) {
+          event.preventDefault(); // منع السلوك الافتراضي للفورم
+          window.alert("Successful");
+          location.replace("../order/order.html");
+        }
+      </script>
+      
+    <style>
+      /* styles.css */
+  
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        height: 100vh;
+      }
+
+      .container {
+        width: 50%;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      header {
+        text-align: center;
+        padding-bottom: 20px;
+      }
+
+      .designer-profile {
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      /* .profile-card {
+    text-align: center; 
+} */
+
+      .request-form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .upload-box {
+        border: 2px dashed #ccc;
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 10px;
+      }
+
+      .materials {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .submit-btn {
+        width: 100%;
+        background-color: #007bff;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      style="
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background: #fff;
+        align-items: center;
+      "
+    >
+      <h3 style="display: flex; margin-left: 50px">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          fill="currentColor"
+          class="bi bi-arrow-left"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+          />
+        </svg>
+        <span style="margin-left: 10px">Custom Request</span>
+      </h3>
+      <div style="margin-right: 50px; gap: 10px">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-chat-left"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-bell"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"
+          />
+        </svg>
+      </div>
+    </nav>
+    <center>
+      
+      <div class="container" style="">
+        <section class="designer-profile">
+          <div class="profile-card">
+            <h3>Sarah Anderson</h3>
+            <p>Custom Jewelry Designer</p>
+            <span
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              4.9 (128 reviews)</span
+            >
+          </div>
+        </section>
+        <section class="request-form">
+          <h3>Tell us about your custom request</h3>
+          <form>
+            <label>Product Name</label>
+            <input type="text" placeholder="E.g., Custom Silver Necklace" />
+
+            <label>Description</label>
+            <textarea
+              placeholder="Describe your request in detail..."
+            ></textarea>
+
+            <label>Reference Images</label>
+            <div class="upload-box">
+              Drag and drop your images here or <a href="#">browse</a>
+            </div>
+
+            <label>Preferred Materials</label>
+            <div class="materials">
+              <label><input type="checkbox" /> Sterling Silver</label>
+              <label><input type="checkbox" /> Gold Plated</label>
+              <label><input type="checkbox" /> Rose Gold</label>
+              <input type="text" placeholder="Write it here..." />
+            </div>
+
+            <label>Quantity</label>
+            <input type="number" value="1" />
+
+            <label>Preferred Deadline</label>
+            <input type="date" />
+
+            <button onclick="Alert(event)" type="submit" class="submit-btn">
+                Send Request
+              </button>
+          </form>
+        </section>
+      </div>
+    </center>
+  </body>
+</html>
