@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .product-page {
+        display: flex;
+        padding: 20px;
+        gap: 20px;
+      }
+      .product-gallery {
+        width: 50%;
+      }
+      .main-image {
+        width: 100%;
+        height: auto;
+      }
+      .thumbnail-container {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .thumbnail {
+        width: 60px;
+        cursor: pointer;
+      }
+      .product-info {
+        width: 50%;
+      }
+      .price {
+        font-size: 1.5em;
+        color: green;
+      }
+      .buy-now,
+      .add-to-cart {
+        display: block;
+        padding: 10px;
+        margin-top: 10px;
+        background: red;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .related-products {
+        padding: 20px;
+      }
+      .product-list {
+        display: flex;
+        gap: 20px;
+      }
+      .product-item img {
+        width: 100px;
+      }
+      footer {
+        background: #000;
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg"
+      style="
+        font-size: 1.1rem;
+        padding: 10px 0;
+        border-bottom: #d5d4d4 1px solid;
+      "
+    >
+      <div class="container-fluid" style="padding: 0 50px">
+        <a class="navbar-brand" href="#"><b>Innocraft</b></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul
+            class="navbar-nav me-auto mb-2 mb-lg-0"
+            style="margin-left: 150px"
+          >
+            <li class="nav-item" style="margin-left: 30px">
+              <a class="nav-link active" aria-current="page" href="../Home page/Home.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item" style="margin-left: 30px">
+              <a class="nav-link" href="../Contect/contact.html">Contact</a>
+            </li>
+            <li class="nav-item" style="margin-left: 30px">
+              <a class="nav-link active" aria-current="page" href="../About/about.html"
+                >About</a
+              >
+            </li>
+            <li class="nav-item" style="margin-left: 30px">
+              <a class="nav-link active" aria-current="page" href="../community/community.html"
+                >community</a
+              >
+            </li>
+            <li class="nav-item" style="margin-left: 30px">
+              <a class="nav-link" href="../SginUpPage/sign_up.html">Sign Up</a>
+            </li>
+          </ul>
+          <form
+            class="d-flex"
+            role="search"
+            style="
+              padding: 5;
+              background: #f7f6f6;
+              color: #d5d4d4;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+            "
+          >
+            <input
+              style="background: #f7f6f6; color: #d5d4d4; border: 0"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <svg
+              color="#000"
+              style="margin-right: 10px"
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+              />
+            </svg>
+          </form>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            style="margin-left: 15px"
+            width="22"
+            height="22"
+            fill="currentColor"
+            class="bi bi-suit-heart"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="m8 6.236-.894-1.789c-.222-.443-.607-1.08-1.152-1.595C5.418 2.345 4.776 2 4 2 2.324 2 1 3.326 1 4.92c0 1.211.554 2.066 1.868 3.37.337.334.721.695 1.146 1.093C5.122 10.423 6.5 11.717 8 13.447c1.5-1.73 2.878-3.024 3.986-4.064.425-.398.81-.76 1.146-1.093C14.446 6.986 15 6.131 15 4.92 15 3.326 13.676 2 12 2c-.777 0-1.418.345-1.954.852-.545.515-.93 1.152-1.152 1.595zm.392 8.292a.513.513 0 0 1-.784 0c-1.601-1.902-3.05-3.262-4.243-4.381C1.3 8.208 0 6.989 0 4.92 0 2.755 1.79 1 4 1c1.6 0 2.719 1.05 3.404 2.008.26.365.458.716.596.992a7.6 7.6 0 0 1 .596-.992C9.281 2.049 10.4 1 12 1c2.21 0 4 1.755 4 3.92 0 2.069-1.3 3.288-3.365 5.227-1.193 1.12-2.642 2.48-4.243 4.38z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            style="margin-left: 15px"
+            width="22"
+            height="22"
+            fill="currentColor"
+            class="bi bi-cart"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            style="margin-left: 15px"
+            width="22"
+            height="22"
+            fill="currentColor"
+            class="bi bi-person-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+            />
+          </svg>
+        </div>
+      </div>
+    </nav>
+
+    <main
+      class="product-page"
+      style="margin: 50px 100px; display: flex; align-items: center"
+    >
+      <div
+        class="product-gallery"
+        style="display: flex; gap: 20px; align-items: center"
+      >
+        <div
+          class="thumbnail-container"
+          style="display: flex; flex-direction: column"
+        >
+          <img
+            style="width: 120px; height: 120px"
+            src="../img/productdetails - Copy.png"
+            alt="Thumbnail 1"
+            class="thumbnail"
+          />
+          <img
+            style="width: 120px; height: 120px"
+            src="../img/productdetails - Copy (3).png"
+            alt="Thumbnail 2"
+            class="thumbnail"
+          />
+          <img
+            style="width: 120px; height: 120px"
+            src="../img/productdetails - Copy (2).png"
+            alt="Thumbnail 3"
+            class="thumbnail"
+          />
+        </div>
+        <span>
+          <img
+            style="height: 400px"
+            src="../img/productdetails.png"
+            alt="Main product image"
+            class="main-image"
+          />
+        </span>
+      </div>
+
+      <div class="product-info" style="padding: 0 50px; width: 500px">
+        <div
+          style="display: flex; justify-content: space-between; margin: 10px 0"
+        >
+          <h5 class="creator"><b>mohammed ali</b></h5>
+        </div>
+        <div style="display: flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            color="orange"
+            height="22"
+            fill="currentColor"
+            class="bi bi-star-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            color="orange"
+            height="22"
+            fill="currentColor"
+            class="bi bi-star-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            color="orange"
+            height="22"
+            fill="currentColor"
+            class="bi bi-star-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            color="orange"
+            height="22"
+            fill="currentColor"
+            class="bi bi-star-half"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            color="orange"
+            height="22"
+            fill="currentColor"
+            class="bi bi-star"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"
+            />
+          </svg>
+          <p style="margin-left: 10px">
+            (100 reviews) | <span style="color: aqua">In Stock</span>
+          </p>
+        </div>
+        <div style="display: flex; margin: 10px 0">
+          <h4 class="product"><b style="color: #fc04b6">$960 </b></h4>
+          <h4 class="creator">
+            <b style="margin-left: 10px; text-decoration: line-through"
+              >$1600</b
+            >
+          </h4>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur ad</p>
+        <br /><br /><br />
+        <hr />
+        <span style="display: flex; justify-content: space-between">
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            "
+          >
+            <span
+              style="
+                width: 40px;
+                height: 40px;
+                border: #c0bfbf solid 1px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+              "
+              >-</span
+            >
+            <span
+              style="
+                width: 70px;
+                height: 40px;
+                border: #c0bfbf solid 1px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+              >2</span
+            >
+            <span
+              style="
+                width: 40px;
+                height: 40px;
+                color: #fff;
+                background: #fc0467;
+                border: #fc0467 solid 1px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+              "
+              >+</span
+            >
+          </div>
+          <button
+            style="
+              color: #fff;
+              background: #fc0467;
+              width: 130px;
+              height: 40px;
+              border: 0;
+              border-radius: 10px;
+            "
+          >
+            Buy Now!
+          </button>
+          <button
+            style="
+              width: 40px;
+              height: 40px;
+              color: #8f8e8e;
+              border: #c0bfbf 1px solid;
+              border-radius: 8px;
+              background: #fff;
+            "
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-heart"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"
+              />
+            </svg>
+          </button>
+        </span>
+      </div>
+    </main>
+
+    <section class="related-products">
+      <h2>Related items</h2>
+      <div
+        class="cards"
+        style="
+          padding: 30px 50px;
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div
+          class="card"
+          style="width: 290px; height: 410px; border: 0; outline: none"
+        >
+          <div class="image" style="width: 100%">
+            <a href="Product Details.html"
+              ><img
+                style="width: 290px; z-index: -1"
+                src="https://i.pinimg.com/236x/4d/fd/8e/4dfd8ecf35020246c962ba9ddbaf8dc9.jpg"
+                alt=""
+              />
+            </a>
+            <span
+              style="
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: 290px;
+                margin-top: -40px;
+                background: #000;
+                color: #fff;
+                padding: 10px 0;
+                justify-content: center;
+                z-index: 100;
+              "
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                style="margin-right: 10px"
+                fill="currentColor"
+                class="bi bi-cart-plus-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"
+                />
+              </svg>
+              Add To Cart</span
+            >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+              "
+            >
+              <span class="product"><b>handmade</b></span>
+              <span class="creator"><b>mohammed ali</b></span>
+            </div>
+            <div style="display: flex; margin: 10px 0">
+              <span class="product"><b style="color: #fc04b6">$960 </b></span>
+              <span class="creator"
+                ><b style="margin-left: 10px; text-decoration: line-through"
+                  >$1600</b
+                ></span
+              >
+            </div>
+            <div style="display: flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-half"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"
+                />
+              </svg>
+              <p style="margin-left: 10px">(100)</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          style="width: 290px; height: 410px; border: 0; outline: none"
+        >
+          <div class="image" style="width: 100%">
+            <a href="Product Details.html"
+              ><img
+                style="width: 290px; z-index: -1"
+                src="https://i.pinimg.com/236x/4d/fd/8e/4dfd8ecf35020246c962ba9ddbaf8dc9.jpg"
+                alt=""
+              />
+            </a>
+            <span
+              style="
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: 290px;
+                margin-top: -40px;
+                background: #000;
+                color: #fff;
+                padding: 10px 0;
+                justify-content: center;
+                z-index: 100;
+              "
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                style="margin-right: 10px"
+                fill="currentColor"
+                class="bi bi-cart-plus-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"
+                />
+              </svg>
+              Add To Cart</span
+            >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+              "
+            >
+              <span class="product"><b>handmade</b></span>
+              <span class="creator"><b>mohammed ali</b></span>
+            </div>
+            <div style="display: flex; margin: 10px 0">
+              <span class="product"><b style="color: #fc04b6">$960 </b></span>
+              <span class="creator"
+                ><b style="margin-left: 10px; text-decoration: line-through"
+                  >$1600</b
+                ></span
+              >
+            </div>
+            <div style="display: flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-half"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"
+                />
+              </svg>
+              <p style="margin-left: 10px">(100)</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          style="width: 290px; height: 410px; border: 0; outline: none"
+        >
+          <div class="image" style="width: 100%">
+            <a href="Product Details.html"
+              ><img
+                style="width: 290px; z-index: -1"
+                src="https://i.pinimg.com/236x/4d/fd/8e/4dfd8ecf35020246c962ba9ddbaf8dc9.jpg"
+                alt=""
+              />
+            </a>
+            <span
+              style="
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: 290px;
+                margin-top: -40px;
+                background: #000;
+                color: #fff;
+                padding: 10px 0;
+                justify-content: center;
+                z-index: 100;
+              "
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                style="margin-right: 10px"
+                fill="currentColor"
+                class="bi bi-cart-plus-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"
+                />
+              </svg>
+              Add To Cart</span
+            >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+              "
+            >
+              <span class="product"><b>handmade</b></span>
+              <span class="creator"><b>mohammed ali</b></span>
+            </div>
+            <div style="display: flex; margin: 10px 0">
+              <span class="product"><b style="color: #fc04b6">$960 </b></span>
+              <span class="creator"
+                ><b style="margin-left: 10px; text-decoration: line-through"
+                  >$1600</b
+                ></span
+              >
+            </div>
+            <div style="display: flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-half"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"
+                />
+              </svg>
+              <p style="margin-left: 10px">(100)</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="card"
+          style="width: 290px; height: 410px; border: 0; outline: none"
+        >
+          <div class="image" style="width: 100%">
+            <a href="Product Details.html"
+              ><img
+                style="width: 290px; z-index: -1"
+                src="https://i.pinimg.com/236x/4d/fd/8e/4dfd8ecf35020246c962ba9ddbaf8dc9.jpg"
+                alt=""
+              />
+            </a>
+            <span
+              style="
+                position: relative;
+                display: flex;
+                align-items: center;
+                width: 290px;
+                margin-top: -40px;
+                background: #000;
+                color: #fff;
+                padding: 10px 0;
+                justify-content: center;
+                z-index: 100;
+              "
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                style="margin-right: 10px"
+                fill="currentColor"
+                class="bi bi-cart-plus-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M9 5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 1 0"
+                />
+              </svg>
+              Add To Cart</span
+            >
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                margin: 10px 0;
+              "
+            >
+              <span class="product"><b>handmade</b></span>
+              <span class="creator"><b>mohammed ali</b></span>
+            </div>
+            <div style="display: flex; margin: 10px 0">
+              <span class="product"><b style="color: #fc04b6">$960 </b></span>
+              <span class="creator"
+                ><b style="margin-left: 10px; text-decoration: line-through"
+                  >$1600</b
+                ></span
+              >
+            </div>
+            <div style="display: flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star-half"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M5.354 5.119 7.538.792A.52.52 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.54.54 0 0 1 16 6.32a.55.55 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.5.5 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.6.6 0 0 1 .085-.302.51.51 0 0 1 .37-.245zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.56.56 0 0 1 .162-.505l2.907-2.77-4.052-.576a.53.53 0 0 1-.393-.288L8.001 2.223 8 2.226z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                color="orange"
+                height="22"
+                fill="currentColor"
+                class="bi bi-star"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"
+                />
+              </svg>
+              <p style="margin-left: 10px">(100)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      style="
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding: 50px;
+        background: #000;
+        color: #fff;
+      "
+    >
+      <div class="div">
+        <h2>Innocraft</h2>
+        <h3>subscribe</h3>
+        <p>Get 10% off your first order</p>
+        <form
+          style="border-radius: 10px; border: #c0bfbf 1px solid; padding: 5px"
+        >
+          <input
+            type="text"
+            placeholder="enter your email"
+            style="
+              color: #c0bfbf;
+              background: transparent;
+              border: 0;
+              outline: none;
+              padding: 5px;
+            "
+          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            fill="currentColor"
+            class="bi bi-send"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"
+            />
+          </svg>
+        </form>
+      </div>
+      <div class="div">
+        <h2>Support</h2>
+        <p>giza</p>
+        <p>innocraft@gmail.com</p>
+        <p>01122771347</p>
+      </div>
+      <div class="div">
+        <h2>Acount</h2>
+        <p>My acount</p>
+        <p>login</p>
+        <p>cart</p>
+        <p>Wishlist</p>
+        <p>shop</p>
+      </div>
+      <div class="div">
+        <h2>Quick link</h2>
+        <p>privacy</p>
+        <p>privacy</p>
+        <p>privacy</p>
+        <p>privacy</p>
+      </div>
+      <div class="div">
+        <h2>download app</h2>
+        <p>save $3 with app new user only</p>
+        <img
+          style="width: 100px"
+          src="data:image/png;base64,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"
+          alt=""
+        />
+        <img
+          style="width: 100px"
+          src="data:image/png;base64,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"
+          alt=""
+        />
+        <div class="social">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            style="margin: 15px 0; margin-right: 15px"
+            fill="currentColor"
+            class="bi bi-facebook"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            style="margin: 15px 0; margin-right: 15px"
+            fill="currentColor"
+            class="bi bi-instagram"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            style="margin: 15px 0; margin-right: 15px"
+            fill="currentColor"
+            class="bi bi-twitter-x"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            style="margin: 15px 0; margin-right: 15px"
+            fill="currentColor"
+            class="bi bi-linkedin"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+            />
+          </svg>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
